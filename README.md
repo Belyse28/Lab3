@@ -4,31 +4,7 @@
 
 A Windows desktop application (C# / WinForms, .NET 8) with a SQLite database, built with the **MVC architecture** for Lab 3.
 
-## 1. How to run
-
-**Requirements:** Windows 10/11, [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) and Visual Studio 2022 (workload ".NET desktop development"), or just the .NET 8 SDK.
-
-**Visual Studio:** open `RentalPropertyManagement.sln` -> press **F5**. NuGet restores `Microsoft.Data.Sqlite` automatically (needs internet the first time).
-
-**Command line:**
-```
-cd RentalPropertyManagement
-dotnet run
-```
-
-No database setup is needed. On first start the app creates the SQLite database at
-`%LocalAppData%\RentalPropertyManagement\rental.db` with all tables and some sample data.
-To reset everything, close the app and delete that file.
-
-### Demo accounts (created on first run)
-
-| Username   | Password       | Role     | Can do |
-|------------|----------------|----------|--------|
-| `admin`    | `Admin@123`    | Admin    | Everything, including user accounts |
-| `landlord` | `Landlord@123` | Landlord | Properties, tenants, payments, dashboard, reports |
-| `alice`    | `Tenant@123`   | Tenant   | Read-only: own payments/balance + browse properties |
-
-## 2. MVC structure
+##  MVC structure
 
 ```
 RentalPropertyManagement/
@@ -42,7 +18,7 @@ RentalPropertyManagement/
 
 Flow: **View** (user clicks Save) -> **Controller** (validates, applies rules, checks role) -> **Database** -> returns **Model** objects -> View displays them. Views never talk to the database directly.
 
-## 3. Requirements traceability
+##  Requirements traceability
 
 | Requirement | Where it is implemented |
 |---|---|
