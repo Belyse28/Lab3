@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Lab3
 =======
 # Rental Property Management System
@@ -67,7 +66,7 @@ Flow: **View** (user clicks Save) -> **Controller** (validates, applies rules, c
 | 2 Usability | Consistent layout, colour-coded statuses, confirmation before deleting, search on every list |
 | 2 Accuracy / error messages | Input validation with clear messages, database transactions, foreign keys + CHECK constraints, unexpected errors caught and shown instead of crashing |
 
-## 4. Business rules (assumptions you should know)
+## 4. Business rules 
 
 * **Rent month.** Every payment is recorded against a rent month (e.g. "November 2026").
 * **Payment status.** For a tenant + month, total paid >= monthly rent -> **Paid**; some but less -> **Partially Paid**.
@@ -77,27 +76,5 @@ Flow: **View** (user clicks Save) -> **Controller** (validates, applies rules, c
 * The last active administrator cannot be deactivated or demoted.
 * Money is shown without a currency symbol, so it works for any currency.
 
-## 5. Quick test checklist
 
-1. Log in as `admin`; the Dashboard shows 5 properties, 3 tenants, 2 available, 3 occupied, outstanding rent.
-2. **Properties:** add one, edit it, search by name, filter by status, try deleting an occupied one (should be refused).
-3. **Tenants:** register a tenant and assign "Studio 5" -> Properties now shows it as Occupied.
-4. **Payments:** record a payment lower than the rent -> status "Partially Paid"; record the remainder for the same month -> both become "Paid". Check the "Outstanding Rent" tab.
-5. **Reports:** generate each report, export to CSV, open in Excel.
-6. **Users:** create a landlord, deactivate them, confirm they can no longer log in. Try deactivating the only admin (should be refused).
-7. Log in as `alice`: only "My Rent & Payments" and "Available Properties" appear, all read-only, and only her own data is visible.
 
-## 6. Uploading to GitHub (required by the lab)
-
-```
-cd RentalPropertyManagement          # the folder that contains the .sln
-git init
-git add .
-git commit -m "Rental Property Management System - Lab 3"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-git push -u origin main
-```
-Create the empty repository on github.com first (no README), copy its URL into the commands above, and submit that repository link in the form.
-(`.gitignore` already excludes `bin/`, `obj/` and database files.)
->>>>>>> 364440b (Initial project commit)
