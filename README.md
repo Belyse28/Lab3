@@ -42,7 +42,7 @@ Flow: **View** (user clicks Save) -> **Controller** (validates, applies rules, c
 | 2 Usability | Consistent layout, colour-coded statuses, confirmation before deleting, search on every list |
 | 2 Accuracy / error messages | Input validation with clear messages, database transactions, foreign keys + CHECK constraints, unexpected errors caught and shown instead of crashing |
 
-## 4. Business rules 
+## Business rules 
 
 * **Rent month.** Every payment is recorded against a rent month (e.g. "November 2026").
 * **Payment status.** For a tenant + month, total paid >= monthly rent -> **Paid**; some but less -> **Partially Paid**.
